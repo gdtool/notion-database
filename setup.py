@@ -9,13 +9,13 @@ setuptools.setup(
     name="notion-database",
     version=NOTION_VERSION.replace("-", "") + ".2",
     author="minwook-shin",
-    author_email="minwook0106@gmail.com",
-    description=" Notion API Database Python Implementation",
+    author_email="q409640976@gmail.com",
+    description=" Notion API Database Python Implementation+",
     long_description=long_description,
     long_description_content_type="text/markdown",
-    url="https://github.com/minwook-shin/notion-database",
+    url="https://github.com/gdtool/notion-database",
     project_urls={
-        "Bug Tracker": "https://github.com/minwook-shin/notion-database/issues",
+        "Bug Tracker": "https://github.com/gdtool/notion-database/issues",
     },
     install_requires=[
         "requests==2.27.1",
