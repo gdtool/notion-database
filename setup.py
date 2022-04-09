@@ -9,7 +9,7 @@ setuptools.setup(
     name="notion-database",
     version=NOTION_VERSION.replace("-", "") + ".2",
     author="minwook-shin",
-    author_email="q409640976@gmail.com",
+    author_email="isme@gmail.com",
     description=" Notion API Database Python Implementation+",
     long_description=long_description,
     long_description_content_type="text/markdown",
