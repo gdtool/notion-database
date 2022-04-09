@@ -48,11 +48,35 @@ class Database:
             body = {}
         self.result = self.request.call_api_post(self.url + "/" + database_id + "/query", body)
 
-    def find_all_page(self, database_id):
-        body = {
-            "sorts": []
-        }
+    def find_all_page(self, database_id, body=None):
+        #https://developers.notion.com/reference/post-database-query
+        testBody ={
+            	"filter": {
+            		"and": [{
+            				"property": "In stock",
+            				"checkbox": {
+            					"equals": true
+            				}
+            			},
+            			{
+            				"property": "Cost of next trip",
+            				"number": {
+            					"greater_than_or_equal_to": 2
+            				}
+            			}
+            		]
+            	},
+            	"sorts": [{
+            		"property": "Last ordered",
+            		"direction": "ascending"
+            	}]
+            }
+        if body is None:
+            body = {
+                "sorts": []
+            }
         self.result = self.request.call_api_post(self.url + "/" + database_id + "/query", body)
+
 
     @deprecate.deprecated_warn
     def list_databases(self, page_size=100):
