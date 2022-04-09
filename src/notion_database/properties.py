@@ -36,7 +36,19 @@ class Properties:
         else:
             text = {}
         self.result.update({col: {"rich_text": text}})
+    def set_relation(self, col, text=None):
+        """
+        rich_text configuration
 
+        :param col: column name
+        :param text: page text. If no text is given, for database only.
+        :return:
+        """
+        if text:
+            text = [{"id": text}]
+        else:
+            text = []
+        self.result.update({col: {"relation": text}})
     def set_number(self, col, text=None):
         """
         number configuration
